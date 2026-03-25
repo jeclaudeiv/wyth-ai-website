@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>wyth.ai — Transform your business wyth AI.</title>
+  <meta name="description" content="AI consulting for mid-market operators and professional services firms. Find the problem. Build the fix. Transform your business wyth AI.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #EDEAE2; --bg-card: #E4E0D7; --ink: #1A1714;
+      --ink-mid: #4A4640; --ink-light: #8A8580; --accent: #E94560;
+      --border: rgba(26,23,20,0.12);
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--ink); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 48px; height: 64px; background: var(--bg); border-bottom: 1px solid var(--border); }
+    .nav-logo { font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 18px; letter-spacing: -0.02em; color: var(--ink); text-decoration: none; }
+    .nav-logo span { color: var(--accent); }
+    .nav-cta { display: inline-flex; align-items: center; gap: 8px; background: var(--ink); color: var(--bg); font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 14px; padding: 10px 20px; border-radius: 100px; text-decoration: none; transition: opacity 0.2s; }
+    .nav-cta:hover { opacity: 0.8; }
+    main { padding-top: 64px; }
+    .hero { min-height: calc(100vh - 64px); display: flex; align-items: center; padding: 80px 48px; max-width: 1100px; margin: 0 auto; }
+    .hero-inner { max-width: 720px; }
+    .hero-eyebrow { font-size: 13px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 32px; }
+    .hero-headline { font-family: 'Instrument Serif', serif; font-size: clamp(48px, 6vw, 80px); line-height: 1.05; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 32px; }
+    .hero-headline em { font-style: italic; color: var(--ink-mid); }
+    .hero-sub { font-size: 18px; font-weight: 300; color: var(--ink-mid); max-width: 520px; line-height: 1.7; margin-bottom: 48px; }
+    .hero-actions { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--ink); color: var(--bg); font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 15px; padding: 14px 28px; border-radius: 100px; text-decoration: none; transition: opacity 0.2s; }
+    .btn-primary:hover { opacity: 0.8; }
+    .btn-primary .arrow { display: inline-block; transition: transform 0.2s; }
+    .btn-primary:hover .arrow { transform: translateX(3px); }
+    .hero-note { font-size: 13px; color: var(--ink-light); }
+    .section-divider { border: none; border-top: 1px solid var(--border); margin: 0 48px; }
+    .how { padding: 100px 48px; max-width: 1100px; margin: 0 auto; }
+    .section-label { font-size: 13px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 48px; }
+    .how-statement { font-family: 'Instrument Serif', serif; font-size: clamp(28px, 3.5vw, 44px); line-height: 1.2; letter-spacing: -0.01em; color: var(--ink); max-width: 680px; margin-bottom: 80px; }
+    .how-statement em { font-style: italic; color: var(--ink-mid); }
+    .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+    .service-card { background: var(--bg-card); padding: 40px 36px; display: flex; flex-direction: column; gap: 16px; transition: background 0.2s; }
+    .service-card:hover { background: var(--bg); }
+    .service-num { font-size: 12px; font-weight: 400; letter-spacing: 0.06em; color: var(--ink-light); }
+    .service-name { font-family: 'Instrument Serif', serif; font-size: 24px; line-height: 1.2; color: var(--ink); }
+    .service-price { font-size: 13px; font-weight: 500; color: var(--accent); letter-spacing: 0.02em; }
+    .service-desc { font-size: 14px; color: var(--ink-mid); line-height: 1.65; flex: 1; }
+    .service-tag { display: inline-block; font-size: 11px; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; padding: 5px 12px; border: 1px solid var(--border); border-radius: 100px; color: var(--ink-light); align-self: flex-start; }
+    .proof { padding: 100px 48px; max-width: 1100px; margin: 0 auto; }
+    .proof-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .proof-headline { font-family: 'Instrument Serif', serif; font-size: clamp(28px, 3vw, 40px); line-height: 1.2; letter-spacing: -0.01em; color: var(--ink); }
+    .proof-headline em { font-style: italic; color: var(--ink-mid); }
+    .proof-points { list-style: none; display: flex; flex-direction: column; gap: 0; }
+    .proof-points li { display: flex; align-items: flex-start; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--border); font-size: 15px; color: var(--ink-mid); line-height: 1.6; }
+    .proof-points li:first-child { border-top: 1px solid var(--border); }
+    .proof-points li::before { content: '→'; color: var(--accent); flex-shrink: 0; margin-top: 2px; font-size: 14px; }
+    .cta-band { margin: 0 48px 100px; background: var(--ink); border-radius: 16px; padding: 80px 64px; display: flex; align-items: center; justify-content: space-between; gap: 48px; flex-wrap: wrap; }
+    .cta-band-eyebrow { font-size: 13px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(232,230,223,0.5); margin-bottom: 16px; }
+    .cta-band-headline { font-family: 'Instrument Serif', serif; font-size: clamp(28px, 3vw, 42px); line-height: 1.15; letter-spacing: -0.01em; color: var(--bg); }
+    .cta-band-headline em { font-style: italic; color: rgba(232,230,223,0.65); }
+    .btn-light { display: inline-flex; align-items: center; gap: 8px; background: var(--bg); color: var(--ink); font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 15px; padding: 14px 28px; border-radius: 100px; text-decoration: none; white-space: nowrap; transition: opacity 0.2s; flex-shrink: 0; }
+    .btn-light:hover { opacity: 0.85; }
+    .btn-light .arrow { display: inline-block; transition: transform 0.2s; }
+    .btn-light:hover .arrow { transform: translateX(3px); }
+    footer { border-top: 1px solid var(--border); padding: 40px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-logo { font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 15px; color: var(--ink); text-decoration: none; }
+    .footer-logo span { color: var(--accent); }
+    .footer-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .footer-links a { font-size: 13px; color: var(--ink-light); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--ink); }
+    .footer-copy { font-size: 13px; color: var(--ink-light); }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-eyebrow { animation: fadeUp 0.6s ease both; animation-delay: 0.1s; }
+    .hero-headline { animation: fadeUp 0.6s ease both; animation-delay: 0.2s; }
+    .hero-sub { animation: fadeUp 0.6s ease both; animation-delay: 0.3s; }
+    .hero-actions { animation: fadeUp 0.6s ease both; animation-delay: 0.4s; }
+    @media (max-width: 900px) {
+      nav, .hero, .how, .proof, footer { padding-left: 24px; padding-right: 24px; }
+      .section-divider { margin: 0 24px; }
+      .services { grid-template-columns: 1fr; }
+      .proof-grid { grid-template-columns: 1fr; gap: 48px; }
+      .cta-band { margin: 0 24px 80px; padding: 48px 40px; flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 600px) {
+      .hero { padding-top: 60px; padding-bottom: 60px; }
+      .hero-actions { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">wyth<span>.ai</span></a>
+    <a href="mailto:jason@wyth.ai" class="nav-cta">Book a Discovery Intensive <span class="arrow">→</span></a>
+  </nav>
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="hero-eyebrow">AI Consulting — Durham, NC</p>
+        <h1 class="hero-headline">Transform your<br>business <em>wyth</em> AI.</h1>
+        <p class="hero-sub">Most organizations know AI matters. Few know where to start, what to build, or how to make it stick. That's the gap wyth.ai fills — finding the highest-value problems and building working solutions, fast.</p>
+        <div class="hero-actions">
+          <a href="mailto:jason@wyth.ai" class="btn-primary">Book a Discovery Intensive <span class="arrow">→</span></a>
+          <span class="hero-note">Paid diagnostic session. No free calls.</span>
+        </div>
+      </div>
+    </section>
+    <hr class="section-divider">
+    <section class="how">
+      <p class="section-label">How it works</p>
+      <p class="how-statement">Every engagement starts with a paid diagnostic. From there, you choose your path — <em>a focused fix, or an ongoing partner.</em></p>
+      <div class="services">
+        <div class="service-card">
+          <span class="service-num">01</span>
+          <h2 class="service-name">Discovery Intensive</h2>
+          <p class="service-price">$1,500 – $2,500</p>
+          <p class="service-desc">A 90-minute session to diagnose your highest-value AI opportunities. You receive a written action plan within 48 hours. This is the entry point for every engagement.</p>
+          <span class="service-tag">Fixed price</span>
+        </div>
+        <div class="service-card">
+          <span class="service-num">02</span>
+          <h2 class="service-name">The Fix</h2>
+          <p class="service-price">$5,000 – $20,000</p>
+          <p class="service-desc">A focused implementation scoped from your Discovery Intensive. The deliverable is a working AI system — not a strategy document. Built with AI tools, agents, and automation.</p>
+          <span class="service-tag">Per project</span>
+        </div>
+        <div class="service-card">
+          <span class="service-num">03</span>
+          <h2 class="service-name">Fractional AI Partner</h2>
+          <p class="service-price">$3,000 – $8,000 / mo</p>
+          <p class="service-desc">A continuous improvement engine. Each month includes a fresh diagnostic plus implementation of your top priority. The compounding value of an AI partner who knows your business.</p>
+          <span class="service-tag">Monthly retainer</span>
+        </div>
+      </div>
+    </section>
+    <hr class="section-divider">
+    <section class="proof">
+      <div class="proof-grid">
+        <div>
+          <p class="section-label">Why wyth.ai</p>
+          <h2 class="proof-headline">A proven pattern, <em>applied to AI.</em></h2>
+        </div>
+        <ul class="proof-points">
+          <li>No free discovery calls. The Discovery Intensive is priced. Clients who invest in diagnosis are serious.</li>
+          <li>No decks without implementation. Every engagement ends with something built, not just recommended.</li>
+          <li>Founder-led. You work directly with the person who diagnosed your problem — not a handoff to a junior team.</li>
+          <li>Platform-agnostic. No vendor bias, no upsells. The right tool for the right problem.</li>
+          <li>20+ years of emerging technology implementation — interactive multimedia, VR/AR for Fortune 500 clients, and now AI.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="cta-band">
+      <div class="cta-band-text">
+        <p class="cta-band-eyebrow">Ready to start</p>
+        <h2 class="cta-band-headline">Find out what AI<br>can <em>actually</em> do for you.</h2>
+      </div>
+      <a href="mailto:jason@wyth.ai" class="btn-light">Book a Discovery Intensive <span class="arrow">→</span></a>
+    </div>
+  </main>
+  <footer>
+    <a href="/" class="footer-logo">wyth<span>.ai</span></a>
+    <ul class="footer-links">
+      <li><a href="mailto:jason@wyth.ai">jason@wyth.ai</a></li>
+      <li><a href="mailto:jason@wyth.ai">Contact</a></li>
+    </ul>
+    <p class="footer-copy">© 2025 wyth.ai</p>
+  </footer>
+</body>
+</html>
