@@ -10,102 +10,138 @@
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --bg:#EDEAE2; --bg-card:#E4E0D7; --ink:#1A1714; --ink-mid:#3D3A36; --ink-light:#8A8580; --accent:#E94560; --border:rgba(26,23,20,0.1); }
-    html { scroll-behavior: smooth; }
-    body { background:var(--bg); color:var(--ink); font-family:'DM Sans',sans-serif; font-weight:400; line-height:1.6; -webkit-font-smoothing:antialiased; }
-    nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:0 48px; height:60px; background:var(--bg); border-bottom:1px solid var(--border); }
-    .nav-logo { font-family:'DM Sans',sans-serif; font-weight:600; font-size:17px; letter-spacing:-0.03em; color:var(--ink); text-decoration:none; }
-    .nav-logo span { color:var(--accent); }
-    .nav-cta { display:inline-flex; align-items:center; gap:6px; background:var(--ink); color:var(--bg); font-family:'DM Sans',sans-serif; font-weight:500; font-size:13px; letter-spacing:0.01em; padding:9px 18px; border-radius:100px; text-decoration:none; transition:opacity 0.2s; }
-    .nav-cta:hover { opacity:0.8; }
-    .hero { padding:100px 48px 72px; max-width:1100px; margin:0 auto; }
-    .hero-top { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:end; margin-bottom:64px; }
-    .hero-eyebrow { font-size:12px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-light); margin-bottom:24px; }
-    .hero-headline { font-family:'Instrument Serif',serif; font-size:clamp(52px,5.5vw,76px); line-height:1.0; letter-spacing:-0.02em; color:var(--ink); }
-    .hero-headline em { font-style:italic; color:var(--ink-mid); }
-    .hero-right { padding-bottom:8px; }
-    .hero-sub { font-size:17px; font-weight:400; color:var(--ink-mid); line-height:1.7; margin-bottom:36px; }
-    .hero-actions { display:flex; align-items:center; gap:20px; flex-wrap:wrap; }
-    .btn-primary { display:inline-flex; align-items:center; gap:8px; background:var(--ink); color:var(--bg); font-family:'DM Sans',sans-serif; font-weight:500; font-size:14px; letter-spacing:0.01em; padding:13px 26px; border-radius:100px; text-decoration:none; transition:opacity 0.2s; }
-    .btn-primary:hover { opacity:0.8; }
-    .btn-primary .arrow { display:inline-block; transition:transform 0.2s; }
-    .btn-primary:hover .arrow { transform:translateX(3px); }
-    .hero-note { font-size:13px; color:var(--ink-light); font-weight:400; }
-    .hero-stats { display:grid; grid-template-columns:repeat(3,1fr); border:1px solid var(--border); border-radius:12px; overflow:hidden; background:var(--border); gap:1px; }
-    .stat { background:var(--bg-card); padding:28px 32px; }
-    .stat-number { font-family:'Instrument Serif',serif; font-size:36px; line-height:1; color:var(--ink); margin-bottom:6px; }
-    .stat-label { font-size:13px; color:var(--ink-light); font-weight:400; }
-    .section-divider { border:none; border-top:1px solid var(--border); margin:0 48px; }
-    .how { padding:88px 48px; max-width:1100px; margin:0 auto; }
-    .section-header { display:flex; align-items:baseline; justify-content:space-between; margin-bottom:56px; }
-    .section-label { font-size:12px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-light); }
-    .section-headline { font-family:'Instrument Serif',serif; font-size:clamp(28px,3vw,40px); line-height:1.2; letter-spacing:-0.01em; color:var(--ink); max-width:560px; }
-    .section-headline em { font-style:italic; color:var(--ink-mid); }
-    .services { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); border:1px solid var(--border); border-radius:12px; overflow:hidden; }
-    .service-card { background:var(--bg-card); padding:40px 36px; display:flex; flex-direction:column; gap:14px; transition:background 0.2s; }
-    .service-card:hover { background:var(--bg); }
-    .service-num { font-size:11px; font-weight:600; letter-spacing:0.08em; color:var(--ink-light); text-transform:uppercase; }
-    .service-name { font-family:'Instrument Serif',serif; font-size:26px; line-height:1.1; color:var(--ink); }
-    .service-price { font-size:13px; font-weight:600; color:var(--accent); letter-spacing:0.02em; }
-    .service-desc { font-size:14px; color:var(--ink-mid); line-height:1.7; flex:1; }
-    .service-tag { display:inline-block; font-size:11px; font-weight:500; letter-spacing:0.06em; text-transform:uppercase; padding:5px 12px; border:1px solid var(--border); border-radius:100px; color:var(--ink-light); align-self:flex-start; }
-    .proof { padding:88px 48px; max-width:1100px; margin:0 auto; }
-    .proof-grid { display:grid; grid-template-columns:5fr 7fr; gap:80px; align-items:start; }
-    .proof-headline { font-family:'Instrument Serif',serif; font-size:clamp(30px,3vw,42px); line-height:1.15; letter-spacing:-0.01em; color:var(--ink); }
-    .proof-headline em { font-style:italic; color:var(--ink-mid); }
-    .proof-sub { margin-top:16px; font-size:14px; color:var(--ink-light); line-height:1.6; }
-    .proof-points { list-style:none; display:flex; flex-direction:column; }
-    .proof-points li { display:flex; align-items:flex-start; gap:16px; padding:18px 0; border-bottom:1px solid var(--border); font-size:15px; color:var(--ink-mid); line-height:1.6; font-weight:400; }
-    .proof-points li:first-child { border-top:1px solid var(--border); }
-    .proof-points li strong { color:var(--ink); font-weight:600; }
-    .proof-points li::before { content:'→'; color:var(--accent); flex-shrink:0; margin-top:3px; font-size:13px; }
-    .cta-band { margin:0 48px 88px; background:var(--ink); border-radius:16px; padding:72px 64px; display:flex; align-items:center; justify-content:space-between; gap:48px; flex-wrap:wrap; }
-    .cta-band-eyebrow { font-size:12px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:rgba(232,230,223,0.45); margin-bottom:14px; }
-    .cta-band-headline { font-family:'Instrument Serif',serif; font-size:clamp(28px,3vw,44px); line-height:1.1; letter-spacing:-0.01em; color:var(--bg); }
-    .cta-band-headline em { font-style:italic; color:rgba(232,230,223,0.6); }
-    .btn-light { display:inline-flex; align-items:center; gap:8px; background:var(--bg); color:var(--ink); font-family:'DM Sans',sans-serif; font-weight:500; font-size:14px; letter-spacing:0.01em; padding:13px 26px; border-radius:100px; text-decoration:none; white-space:nowrap; transition:opacity 0.2s; flex-shrink:0; }
-    .btn-light:hover { opacity:0.85; }
-    .btn-light .arrow { display:inline-block; transition:transform 0.2s; }
-    .btn-light:hover .arrow { transform:translateX(3px); }
-    footer { border-top:1px solid var(--border); padding:36px 48px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; }
-    .footer-logo { font-family:'DM Sans',sans-serif; font-weight:600; font-size:15px; letter-spacing:-0.02em; color:var(--ink); text-decoration:none; }
-    .footer-logo span { color:var(--accent); }
-    .footer-links { display:flex; align-items:center; gap:32px; list-style:none; }
-    .footer-links a { font-size:13px; color:var(--ink-light); text-decoration:none; transition:color 0.2s; }
-    .footer-links a:hover { color:var(--ink); }
-    .footer-copy { font-size:13px; color:var(--ink-light); }
-    @keyframes fadeUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
-    .hero-eyebrow{animation:fadeUp 0.5s ease both;animation-delay:0.05s}
-    .hero-headline{animation:fadeUp 0.5s ease both;animation-delay:0.15s}
-    .hero-right{animation:fadeUp 0.5s ease both;animation-delay:0.25s}
-    .hero-stats{animation:fadeUp 0.5s ease both;animation-delay:0.35s}
-    @media(max-width:960px){
-      nav,.hero,.how,.proof,footer{padding-left:24px;padding-right:24px}
-      .section-divider{margin:0 24px}
-      .hero-top{grid-template-columns:1fr;gap:36px}
-      .hero-stats{grid-template-columns:1fr}
-      .section-header{flex-direction:column;gap:16px}
-      .services{grid-template-columns:1fr}
-      .proof-grid{grid-template-columns:1fr;gap:48px}
-      .cta-band{margin:0 24px 72px;padding:48px 40px;flex-direction:column;align-items:flex-start}
+
+    :root {
+      --bg: #EDEAE2;
+      --bg-card: #E4E0D7;
+      --ink: #1A1714;
+      --ink-mid: #3D3A36;
+      --ink-light: #8A8580;
+      --accent: #E94560;
+      --accent-light: rgba(233,69,96,0.1);
+      --border: rgba(26,23,20,0.1);
     }
-    @media(max-width:600px){
-      .hero{padding-top:80px}
-      .hero-actions{flex-direction:column;align-items:flex-start}
-      .hero-stats{grid-template-columns:1fr 1fr}
+
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--ink); font-family: 'DM Sans', sans-serif; font-weight: 400; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 48px; height: 60px; background: var(--bg); border-bottom: 1px solid var(--border); }
+    .nav-logo { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 17px; letter-spacing: -0.03em; color: var(--ink); text-decoration: none; }
+    .nav-logo span { color: var(--accent); }
+    .nav-cta { display: inline-flex; align-items: center; gap: 6px; background: var(--ink); color: var(--bg); font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 13px; letter-spacing: 0.01em; padding: 9px 20px; border-radius: 100px; text-decoration: none; transition: opacity 0.2s; }
+    .nav-cta:hover { opacity: 0.8; }
+
+    /* HERO */
+    .hero { padding: 100px 48px 72px; max-width: 1100px; margin: 0 auto; }
+    .hero-top { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: end; margin-bottom: 48px; }
+    .hero-eyebrow { font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 24px; }
+    .hero-headline { font-family: 'Instrument Serif', serif; font-size: clamp(52px, 5.5vw, 76px); line-height: 1.0; letter-spacing: -0.02em; color: var(--ink); }
+    .hero-headline em { font-style: italic; color: var(--accent); }
+    .hero-right { padding-bottom: 8px; }
+    .hero-sub { font-size: 17px; font-weight: 400; color: var(--ink-mid); line-height: 1.7; margin-bottom: 36px; }
+    .hero-actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: #fff; font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 14px; letter-spacing: 0.01em; padding: 13px 26px; border-radius: 100px; text-decoration: none; transition: opacity 0.2s; }
+    .btn-primary:hover { opacity: 0.85; }
+    .btn-primary .arrow { display: inline-block; transition: transform 0.2s; }
+    .btn-primary:hover .arrow { transform: translateX(3px); }
+    .hero-note { font-size: 13px; color: var(--ink-light); font-weight: 400; }
+
+    /* STATS BAR */
+    .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--border); gap: 1px; }
+    .stat { background: var(--bg-card); padding: 32px 36px; display: flex; flex-direction: column; justify-content: flex-start; }
+    .stat-number { font-family: 'Instrument Serif', serif; font-size: 40px; line-height: 1; color: var(--accent); margin-bottom: 8px; }
+    .stat-label { font-size: 13px; color: var(--ink-mid); font-weight: 400; line-height: 1.5; max-width: 180px; }
+
+    /* DIVIDERS */
+    .section-divider { border: none; border-top: 1px solid var(--border); margin: 0 48px; }
+
+    /* HOW IT WORKS */
+    .how { padding: 88px 48px; max-width: 1100px; margin: 0 auto; }
+    .section-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 56px; }
+    .section-label { font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+    .section-headline { font-family: 'Instrument Serif', serif; font-size: clamp(28px, 3vw, 40px); line-height: 1.2; letter-spacing: -0.01em; color: var(--ink); max-width: 560px; }
+    .section-headline em { font-style: italic; color: var(--ink-mid); }
+
+    /* SERVICE CARDS */
+    .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+    .service-card { background: var(--bg-card); padding: 40px 36px; display: flex; flex-direction: column; gap: 14px; transition: background 0.2s; }
+    .service-card:hover { background: var(--bg); }
+    .service-num { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; color: var(--accent); text-transform: uppercase; }
+    .service-name { font-family: 'Instrument Serif', serif; font-size: 26px; line-height: 1.1; color: var(--ink); }
+    .service-price { font-size: 13px; font-weight: 600; color: var(--accent); letter-spacing: 0.02em; }
+    .service-desc { font-size: 14px; color: var(--ink-mid); line-height: 1.7; flex: 1; }
+    .service-tag { display: inline-block; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; padding: 5px 12px; border: 1px solid var(--border); border-radius: 100px; color: var(--ink-light); align-self: flex-start; }
+
+    /* PROOF / VALUE PROPS */
+    .proof { padding: 88px 48px; max-width: 1100px; margin: 0 auto; }
+    .proof-grid { display: grid; grid-template-columns: 2fr 3fr; gap: 80px; align-items: start; }
+    .proof-left { position: sticky; top: 80px; }
+    .proof-headline { font-family: 'Instrument Serif', serif; font-size: clamp(28px, 2.8vw, 38px); line-height: 1.15; letter-spacing: -0.01em; color: var(--ink); }
+    .proof-headline em { font-style: italic; color: var(--ink-mid); }
+    .proof-sub { margin-top: 16px; font-size: 14px; color: var(--ink-light); line-height: 1.65; }
+    .proof-points { list-style: none; display: flex; flex-direction: column; border-top: 1px solid var(--border); }
+    .proof-points li { display: grid; grid-template-columns: auto 1fr; gap: 16px; align-items: baseline; padding: 24px 0; border-bottom: 1px solid var(--border); font-size: 15px; color: var(--ink-mid); line-height: 1.65; font-weight: 400; }
+    .proof-arrow { color: var(--accent); font-size: 14px; padding-top: 2px; flex-shrink: 0; }
+    .proof-points li strong { display: block; color: var(--ink); font-weight: 600; font-size: 15px; margin-bottom: 4px; }
+
+    /* CTA BAND */
+    .cta-band { margin: 0 48px 88px; background: var(--ink); border-radius: 16px; padding: 72px 64px; display: flex; align-items: center; justify-content: space-between; gap: 48px; flex-wrap: wrap; }
+    .cta-band-eyebrow { font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+    .cta-band-headline { font-family: 'Instrument Serif', serif; font-size: clamp(28px, 3vw, 44px); line-height: 1.1; letter-spacing: -0.01em; color: var(--bg); }
+    .cta-band-headline em { font-style: italic; color: rgba(232,230,223,0.6); }
+    .btn-light { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: #fff; font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 14px; letter-spacing: 0.01em; padding: 13px 26px; border-radius: 100px; text-decoration: none; white-space: nowrap; transition: opacity 0.2s; flex-shrink: 0; }
+    .btn-light:hover { opacity: 0.85; }
+    .btn-light .arrow { display: inline-block; transition: transform 0.2s; }
+    .btn-light:hover .arrow { transform: translateX(3px); }
+
+    /* FOOTER */
+    footer { border-top: 1px solid var(--border); padding: 36px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-logo { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 15px; letter-spacing: -0.02em; color: var(--ink); text-decoration: none; }
+    .footer-logo span { color: var(--accent); }
+    .footer-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .footer-links a { font-size: 13px; color: var(--ink-light); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--ink); }
+    .footer-copy { font-size: 13px; color: var(--ink-light); }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-eyebrow  { animation: fadeUp 0.5s ease both; animation-delay: 0.05s; }
+    .hero-headline { animation: fadeUp 0.5s ease both; animation-delay: 0.15s; }
+    .hero-right    { animation: fadeUp 0.5s ease both; animation-delay: 0.25s; }
+    .hero-stats    { animation: fadeUp 0.5s ease both; animation-delay: 0.35s; }
+
+    /* RESPONSIVE */
+    @media (max-width: 960px) {
+      nav, .hero, .how, .proof, footer { padding-left: 24px; padding-right: 24px; }
+      .section-divider { margin: 0 24px; }
+      .hero-top { grid-template-columns: 1fr; gap: 36px; }
+      .hero-stats { grid-template-columns: 1fr 1fr; }
+      .section-header { flex-direction: column; gap: 16px; }
+      .services { grid-template-columns: 1fr; }
+      .proof-grid { grid-template-columns: 1fr; gap: 48px; }
+      .proof-left { position: static; }
+      .cta-band { margin: 0 24px 72px; padding: 48px 40px; flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 600px) {
+      .hero { padding-top: 80px; }
+      .hero-actions { flex-direction: column; align-items: flex-start; }
+      .hero-stats { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
+
   <nav>
     <a href="/" class="nav-logo">wyth<span>.ai</span></a>
     <a href="mailto:jason@wyth.ai" class="nav-cta">Start with a Discovery Session <span class="arrow">→</span></a>
   </nav>
+
   <section class="hero">
     <div class="hero-top">
       <div class="hero-left">
-        <p class="hero-eyebrow">AI Consulting — Durham, NC</p>
-        <h1 class="hero-headline">Transform your<br>business<br><em>wyth AI.</em></h1>
+        <p class="hero-eyebrow">AI Consulting</p>
+        <h1 class="hero-headline">Transform your business<br><em>wyth AI.</em></h1>
       </div>
       <div class="hero-right">
         <p class="hero-sub">Most organizations know AI matters. Few know where to start, what to build, or how to make it last. wyth.ai closes that gap — finding your highest-value opportunities and building solutions that actually work.</p>
@@ -130,7 +166,9 @@
       </div>
     </div>
   </section>
+
   <hr class="section-divider">
+
   <section class="how">
     <div class="section-header">
       <span class="section-label">How it works</span>
@@ -160,23 +198,41 @@
       </div>
     </div>
   </section>
+
   <hr class="section-divider">
+
   <section class="proof">
     <div class="proof-grid">
-      <div>
+      <div class="proof-left">
         <p class="section-label">Why wyth.ai</p>
-        <h2 class="proof-headline">A track record of<br><em>making new technology work.</em></h2>
-        <p class="proof-sub">Two decades of translating emerging technologies into real outcomes for serious organizations — from Fortune 500 enterprise clients to lean mid-market operators.</p>
+        <h2 class="proof-headline" style="margin-top:16px">A track record of<br><em>making new technology work.</em></h2>
+        <p class="proof-sub">Two decades of translating emerging technologies into real outcomes — from Fortune 500 enterprise clients to lean mid-market operators.</p>
       </div>
       <ul class="proof-points">
-        <li><strong>Every session creates value on its own.</strong> The Discovery Session delivers a clear action plan you can act on — whether you work with us afterward or not.</li>
-        <li><strong>We build, not just advise.</strong> Every engagement ends with a working solution. No decks, no recommendations that gather dust.</li>
-        <li><strong>You work with the founder.</strong> Not a project manager, not a junior consultant. The person who ran your Discovery Session builds your solution.</li>
-        <li><strong>No vendor bias.</strong> Platform-agnostic by design. The right tool for your specific problem — no upsells, no partnerships to protect.</li>
-        <li><strong>Proven creative problem-solving.</strong> From interactive media to enterprise-scale immersive experiences, the methodology is the same: find the constraint, apply the right technology, ship something that works.</li>
+        <li>
+          <span class="proof-arrow">→</span>
+          <div><strong>Every session creates value on its own.</strong> The Discovery Session delivers a clear action plan you can act on — whether you work with us afterward or not.</div>
+        </li>
+        <li>
+          <span class="proof-arrow">→</span>
+          <div><strong>We build, not just advise.</strong> Every engagement ends with a working solution. No decks, no recommendations that gather dust.</div>
+        </li>
+        <li>
+          <span class="proof-arrow">→</span>
+          <div><strong>You work with the founder.</strong> Not a project manager, not a junior consultant. The person who ran your Discovery Session builds your solution.</div>
+        </li>
+        <li>
+          <span class="proof-arrow">→</span>
+          <div><strong>No vendor bias.</strong> Platform-agnostic by design. The right tool for your specific problem — no upsells, no partnerships to protect.</div>
+        </li>
+        <li>
+          <span class="proof-arrow">→</span>
+          <div><strong>Proven creative problem-solving.</strong> From interactive media to enterprise-scale immersive experiences, the methodology is the same: find the constraint, apply the right technology, ship something that works.</div>
+        </li>
       </ul>
     </div>
   </section>
+
   <div class="cta-band">
     <div>
       <p class="cta-band-eyebrow">Ready to find out</p>
@@ -184,6 +240,7 @@
     </div>
     <a href="mailto:jason@wyth.ai" class="btn-light">Start with a Discovery Session <span class="arrow">→</span></a>
   </div>
+
   <footer>
     <a href="/" class="footer-logo">wyth<span>.ai</span></a>
     <ul class="footer-links">
@@ -192,5 +249,6 @@
     </ul>
     <p class="footer-copy">© 2025 wyth.ai</p>
   </footer>
+
 </body>
 </html>
